@@ -29,7 +29,7 @@ class Solution:
  class Solution2:
     def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
         
-            while head and head.val == val: 
+            while head and head.val == val:  # 같은 것들은 모두 지우는 코드 e.g. removeElements([7,7,7,7],7) => []
                 head = head.next 
                 
             if not head: 
