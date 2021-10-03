@@ -34,7 +34,7 @@ class TreeNode:
 #Create a BST from a list, then return root node
 from collections import deque
 
-def create_linked_bst(arr: list) -> TreeNode:
+def create_linked_bst(arr: list) -> TreeNode: # Null이 있을 경우 None을 대신 넣어주면 됨
     if len(arr) < 1: return None
     n = iter(arr)
     tree = TreeNode(next(n))
