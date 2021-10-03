@@ -4,7 +4,7 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
-class Solution:
+class Solution: # Recursion 코드
     def isUnivalTree(self, root: Optional[TreeNode]) -> bool:
         if root:
             if root.left:
@@ -19,3 +19,16 @@ class Solution:
             return True
         return self.isUnivalTree(root.left) and self.isUnivalTree(root.right)
         
+class Solution2: # while loop 코드
+    def isUnivalTree(self, root: Optional[TreeNode]) -> bool:
+        stack = [root]
+        while stack:
+            cnode = stack.pop()
+            if root.val == cnode.val:
+                if cnode.left:
+                    stack.append(cnode.left)
+                if cnode.right:
+                    stack.append(cnode.right)
+            else:
+                return False
+        return True
